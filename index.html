@@ -7,22 +7,32 @@ description: "Ordne die Codeblöcke. Nutze „Get Feedback“ zur Prüfung und �
 
 <h1>Übung</h1>  
 <h2>Temperatur-Puzzle</h2>
-
-<script type="text/javascript">
-window.addEventListener("load", function () {
-  var initial =
-    "temperature = float(input(\"Bitte geben Sie die aktuelle Temperatur ein: \"))\n" +
-    "\n" +
-    "if temperature < 20 :\n" +
-    "    print(\"Es ist zu kalt.\")\n" +
-    "elif temperature > 25 :\n" +
-    "    print(\"Es ist zu heiß\")\n" +
-    "else :\n" +
-    "    print(\"Es ist angenehm warm.\")";
-
+<div id="p1-sortableTrash" class="sortable-code"></div> 
+<div id="p1-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="p1-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="p1-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "temperature = float(input(&quot;Bitte geben Sie die aktuelle Temperatur ein: &quot;))
+\n" +
+    "
+\n" +
+    "if temperature &lt; 20 :
+\n" +
+    "    print(&quot;Es ist zu kalt.&quot;)
+\n" +
+    "elif temperature &gt; 25 :
+\n" +
+    "    print(&quot;Es ist zu heiß&quot;)
+\n" +
+    "else :
+\n" +
+    "    print(&quot;Es ist angenehm warm.&quot;)";
   var parsonsPuzzle = new ParsonsWidget({
     "sortableId": "p1-sortable",
-    "trashId": "p1-sortableTrash",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
@@ -32,18 +42,15 @@ window.addEventListener("load", function () {
     "show_feedback": true,
     "python3": true
   });
-
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-
-  $("#p1-newInstanceLink").click(function (event) {
-    event.preventDefault();
-    parsonsPuzzle.shuffleLines();
-  });
-
-  $("#p1-feedbackLink").click(function (event) {
-    event.preventDefault();
-    parsonsPuzzle.getFeedback();
-  });
-});
+  $("#p1-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#p1-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
