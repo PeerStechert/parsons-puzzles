@@ -6,10 +6,11 @@ description: "Ordne die Codeblöcke. Nutze „Get Feedback“ zur Prüfung und �
 
 <h1>Uebung</h1>
 <h2>Temperatur-Puzzle</h2>
+<h2>Temperatur-Puzzle</h2>
 
-<div id="p1-sortableTrash" class="sortable-code"></div>
 <div id="p1-sortable" class="sortable-code"></div>
 <div style="clear:both;"></div>
+
 <p>
   <input id="p1-feedbackLink" value="Get Feedback" type="button" />
   <input id="p1-newInstanceLink" value="Reset Problem" type="button" />
@@ -28,16 +29,15 @@ window.addEventListener("load", function () {
     "    print(\"Es ist angenehm warm.\")";
 
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p1-sortable",
-    "trashId": "p1-sortableTrash",
-    "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.LineBasedGrader,
-    "exec_limit": 2500,
-    "can_indent": true,
-    "x_indent": 50,
-    "lang": "en",
-    "show_feedback": true,
-    "python3": true
+    sortableId: "p1-sortable",
+    max_wrong_lines: 10,
+    grader: ParsonsWidget._graders.LineBasedGrader,
+    exec_limit: 2500,
+    can_indent: true,
+    x_indent: 50,
+    lang: "en",
+    show_feedback: true,
+    python3: true
   });
 
   parsonsPuzzle.init(initial);
