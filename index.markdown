@@ -10,12 +10,12 @@ title: Multiple Parson's Problems on One Page
 ## Parsons 1 (Line Based Grader)
 Re-arrange the blocks below:
 
-<div id="1133-sortableTrash" class="sortable-code"></div> 
-<div id="1133-sortable" class="sortable-code"></div> 
+<div id="p1-sortableTrash" class="sortable-code"></div> 
+<div id="p1-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="1133-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="1133-newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="p1-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="p1-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
@@ -35,7 +35,7 @@ Re-arrange the blocks below:
 \n" +
     "    print(&quot;Es ist angenehm warm.&quot;)";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "1133-sortable",
+    "sortableId": "p1-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
@@ -44,15 +44,15 @@ Re-arrange the blocks below:
     "lang": "en",
     "show_feedback": true,
     "python3": true,
-    "trashId": "1133-sortableTrash"
+    "trashId": "p1-sortableTrash"
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#1133-newInstanceLink").click(function(event){ 
+  $("#p1-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#1133-feedbackLink").click(function(event){ 
+  $("#p1-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 
