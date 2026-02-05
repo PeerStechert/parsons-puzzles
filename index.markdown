@@ -8,44 +8,56 @@ title: Multiple Parson's Problems on One Page
 # Parsons Practice
 
 ## Parsons 1 (Line Based Grader)
-Re-arrange the blocks below so they print out "Hello World!"
+Re-arrange the blocks below:
 
-<div id="p1-sortableTrash" class="sortable-code"></div>
-<div id="p1-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p1-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p1-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
-(function() {
-  var initial = "print(\"Hello\")\n" +
-    "print(\" \")\n" +
-    "print(\"World\")\n" +
-    "print(\"!\")";
+<div id="1133-sortableTrash" class="sortable-code"></div> 
+<div id="1133-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="1133-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="1133-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "temperature = float(input(&quot;Bitte geben Sie die aktuelle Temperatur ein: &quot;))
+\n" +
+    "
+\n" +
+    "if temperature &lt; 20 :
+\n" +
+    "    print(&quot;Es ist zu kalt.&quot;)
+\n" +
+    "elif temperature &gt; 25 :
+\n" +
+    "    print(&quot;Es ist zu heiß&quot;)
+\n" +
+    "else :
+\n" +
+    "    print(&quot;Es ist angenehm warm.&quot;)";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p1-sortable",
+    "sortableId": "1133-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
-    "can_indent": false,
+    "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "trashId": "p1-sortableTrash"
+    "show_feedback": true,
+    "python3": true,
+    "trashId": "1133-sortableTrash"
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#p1-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p1-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
-  });
-})();
+  $("#1133-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#1133-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
-
 
 ## Parsons 2 (Variable Check Grader)
 Construct a program that swaps the values of variables <code>x</code> and <code>y</code> using the helper variable <code>tmp</code>. You can change the names of the variables (<span class="jsparson-toggle"></span>) by clicking them.
